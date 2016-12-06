@@ -24,6 +24,7 @@ angular.module('Form', [])
         })
 
     }
+    // $scope.getJobData();
 
     $scope.getSingleJob = function() {
       console.log($scope.role);
@@ -41,6 +42,7 @@ angular.module('Form', [])
       HttpService.putStageData({"id": $scope.results[$index]._id, "stages": $scope.stageattrs})
       .then(function(resp) {
         console.log("this is the resp", resp);
+        $scope.stageattrs = {};
         $scope.getJobData();
       })
     }
@@ -72,7 +74,7 @@ angular.module('Form', [])
 
   let putStageData = function(stage) {
     console.log("Stage from within PutStageData HTTP service", stage.stages);
-    return $http.put('/form/' + stage.id, stage)
+    return $http.put('/form/' + stage.id, stage.stages)
     .then(function(res) {
       console.log(res)
       return res;

@@ -33,7 +33,7 @@ console.log(url)
 
 
 app.post('/form', function(req,res){
-
+// console.log(req.body)
 	new Position({
 	startDate: req.body.data.startDate,
 	companyName: req.body.data.companyName,
@@ -72,7 +72,7 @@ app.get('/form/:role', function(req,res){
 app.put('/form/:id', function(req, res){
 	console.log("req.body", req.body)
 	// var recordId =
-	Position.findByIdAndUpdate(req.params.id, {$push: {"stages": req.body.stages}},
+	Position.findByIdAndUpdate(req.params.id, {$push: {"stages": req.body}},
 			function(err, stage) {
 		res.send(stage)
 	})
