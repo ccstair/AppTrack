@@ -90,14 +90,14 @@
             <div class="field">_ID: {{result._id}}</div>
           </li>
 
-          <div class="stage-name" ng-repeat="stage in results[$index]" ng-model="results">
+          <div class="stage-name" ng-repeat="stage in results[$index].stages track by $index" ng-model="results">
             <ul>
               <li>
-            <div class="field"><strong>Interview Scheduled?: </strong>{{stages.scheduledStatus}}</div>
-            <div class="field"><strong>Date Completed: </strong>{{stage.stages.interviewCompletedDate}}</div>
-            <div class="field"><strong>Primary Interviewer Type: </strong>{{stage.stages.interviewerType}}</div>
-            <div class="field"><strong>Date of Thank You or Last Follow Up: </strong>{{stage.stages.dateOfLastFollowUp}}</div>
-            <div class="field"><strong>Reply Received: </strong>{{stage.stages.interviewReplyReceived}}</div>
+            <div class="field"><strong>Interview Scheduled?: </strong>{{stage.scheduledStatus}}</div>
+            <div class="field"><strong>Date Completed: </strong>{{stage.interviewCompletedDate}}</div>
+            <div class="field"><strong>Primary Interviewer Type: </strong>{{stage.interviewerType}}</div>
+            <div class="field"><strong>Date of Thank You or Last Follow Up: </strong>{{stage.dateOfLastFollowUp}}</div>
+            <div class="field"><strong>Reply Received: </strong>{{stage.interviewReplyReceived}}</div>
               </li>
             </ul>
           </div>
